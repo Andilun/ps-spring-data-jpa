@@ -29,6 +29,13 @@ public class SpeakerTest {
         Speaker speaker = repository.getOne(1L);
         assertNotNull(speaker);
     }
+    
+    @Test
+    public void testFindAll() throws Exception {
+        List<Speaker> speaker = repository.findAll();
+        assertTrue(speaker.size()>0);
+        //for(Speaker s: speaker) System.out.println(s.getFirstName());
+    }
 
     @Test
     @Transactional

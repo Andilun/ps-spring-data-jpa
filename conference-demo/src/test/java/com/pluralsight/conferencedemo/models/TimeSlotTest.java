@@ -1,6 +1,4 @@
 package com.pluralsight.conferencedemo.models;
-
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDate;
@@ -27,7 +25,7 @@ public class TimeSlotTest {
     	
     	List<TimeSlot> timeSlot = timeSlotJpaRepository.findAll();   
         assertTrue(timeSlot.size() > 0);
-        for(TimeSlot s: timeSlot) System.out.println(s.getTimeSlotId());
+        //for(TimeSlot s: timeSlot) System.out.println(s.getTimeSlotId());
 
     }
     
@@ -36,7 +34,7 @@ public class TimeSlotTest {
     	LocalDate date =  LocalDate.of(2020, Month.APRIL, 9);
     	List<TimeSlot> timeSlots = timeSlotJpaRepository.findByTimeSlotDate(date);  
     	assertTrue(timeSlots.size() > 0);
-    	for(TimeSlot s: timeSlots) System.out.println(s.toString());
+    	//for(TimeSlot s: timeSlots) System.out.println(s.toString());
        
 
     }
@@ -45,7 +43,7 @@ public class TimeSlotTest {
     	LocalDate date =  LocalDate.of(2020, Month.APRIL, 9);
         List<TimeSlot> timeSlots = timeSlotJpaRepository.findByTimeSlotDateAfter(date);   
         assertTrue(timeSlots.size() > 0);
-        for(TimeSlot s: timeSlots) System.out.println(s.toString());
+        //for(TimeSlot s: timeSlots) System.out.println(s.toString());
     }
     
     @Test
@@ -53,7 +51,7 @@ public class TimeSlotTest {
     	LocalDate date =  LocalDate.of(2020, Month.APRIL, 10);
         List<TimeSlot> timeSlots = timeSlotJpaRepository.findByTimeSlotDateBefore(date);   
         assertTrue(timeSlots.size() > 0);
-        for(TimeSlot s: timeSlots) System.out.println(s.toString());
+        //for(TimeSlot s: timeSlots) System.out.println(s.toString());
     }
     
     @Test
@@ -62,7 +60,7 @@ public class TimeSlotTest {
     	LocalDate end =  LocalDate.of(2020, Month.APRIL, 9);
         List<TimeSlot> timeSlots = timeSlotJpaRepository.findByTimeSlotDateBetween(start,end);   
         assertTrue(timeSlots.size() > 0);
-        for(TimeSlot s: timeSlots) System.out.println(s.toString());
+        //for(TimeSlot s: timeSlots) System.out.println(s.toString());
     }
     
 }

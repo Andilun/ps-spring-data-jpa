@@ -1,7 +1,5 @@
 package com.pluralsight.conferencedemo.models;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 

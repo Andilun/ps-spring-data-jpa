@@ -1,6 +1,5 @@
 package com.pluralsight.conferencedemo.repositories;
 
-import com.pluralsight.conferencedemo.models.Speaker;
 import com.pluralsight.conferencedemo.models.TicketPrice;
 import org.springframework.stereotype.Repository;
 
@@ -34,7 +33,7 @@ public class TicketPriceRepository {
         return entityManager.find(TicketPrice.class, id);
     }
 
-    public List<TicketPrice> list() {
+	public List<TicketPrice> list() {
         return entityManager.createQuery("select t from TicketPrice t").getResultList();
     }
 }
