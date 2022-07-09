@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="time_slot")
-public class timeSlot {
+public class TimeSlot {
     @Id
     @Column(name = "time_slot_id")
     private Integer timeSlotId;
@@ -27,7 +27,7 @@ public class timeSlot {
     @Column(name = "is_keynote_time_slot")
     private Boolean isKeynoteTimeSlot;
     
-	public timeSlot() {
+	public TimeSlot() {
 		// TODO Auto-generated constructor stub
 	}
 
