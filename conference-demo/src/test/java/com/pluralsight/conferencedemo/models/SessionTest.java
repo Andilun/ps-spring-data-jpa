@@ -23,6 +23,7 @@ public class SessionTest {
     public void test() throws Exception {
         List<Session> sessions = sessionRepository.getSessionsThatHaveName("Java");
         assertTrue(sessions.size() > 0);
+        for(Session s : sessions) System.out.println(s.getSessionName());
     }
     
     @Test

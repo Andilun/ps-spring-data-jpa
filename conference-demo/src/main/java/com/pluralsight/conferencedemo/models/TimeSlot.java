@@ -1,65 +1,69 @@
 package com.pluralsight.conferencedemo.models;
 
-import java.sql.Date;
-import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
-@Table(name="time_slot")
+@Table(name="time_slots")
 public class TimeSlot {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "time_slot_id")
-    private Integer timeSlotId;
+    private Long timeSlotId;
     
     @Column(name = "time_slot_date")
-    private Date timeSlotDate;
+    private LocalDate timeSlotDate;
     
     @Column(name = "start_time")
-    private Time startTime;
+    private LocalDateTime startTime;
     
     @Column(name = "end_time")
-    private Time endTime;
+    private LocalDateTime endTime;
     
     @Column(name = "is_keynote_time_slot")
-    private Boolean isKeynoteTimeSlot;
+    private boolean isKeynoteTimeSlot;
     
 	public TimeSlot() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getTimeSlotId() {
+	public Long getTimeSlotId() {
 		return timeSlotId;
 	}
 
-	public void setTimeSlotId(Integer timeSlotId) {
+	public void setTimeSlotId(Long timeSlotId) {
 		this.timeSlotId = timeSlotId;
 	}
 
-	public Date getTimeSlotDate() {
+	public LocalDate getTimeSlotDate() {
 		return timeSlotDate;
 	}
 
-	public void setTimeSlotDate(Date timeSlotDate) {
+	public void setTimeSlotDate(LocalDate timeSlotDate) {
 		this.timeSlotDate = timeSlotDate;
 	}
 
-	public Time getStartTime() {
+	public LocalDateTime getStartTime() {
 		return startTime;
 	}
 
-	public void setStartTime(Time startTime) {
+	public void setStartTime(LocalDateTime startTime) {
 		this.startTime = startTime;
 	}
 
-	public Time getEndTime() {
+	public LocalDateTime getEndTime() {
 		return endTime;
 	}
 
-	public void setEndTime(Time endTime) {
+	public void setEndTime(LocalDateTime endTime) {
 		this.endTime = endTime;
 	}
 
@@ -69,6 +73,12 @@ public class TimeSlot {
 
 	public void setIsKeynoteTimeSlot(Boolean isKeynoteTimeSlot) {
 		this.isKeynoteTimeSlot = isKeynoteTimeSlot;
+	}
+
+	@Override
+	public String toString() {
+		return "TimeSlot [timeSlotId=" + timeSlotId + ", timeSlotDate=" + timeSlotDate + ", startTime=" + startTime
+				+ ", endTime=" + endTime + ", isKeynoteTimeSlot=" + isKeynoteTimeSlot + "]";
 	}
 	
 }

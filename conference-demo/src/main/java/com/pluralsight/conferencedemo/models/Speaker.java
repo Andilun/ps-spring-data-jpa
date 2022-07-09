@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+
+import java.util.Arrays;
 import java.util.List;
 
 @Entity
@@ -87,7 +89,14 @@ public class Speaker {
         return title;
     }
 
-    public void setTitle(String title) {
+    @Override
+	public String toString() {
+		return "Speaker [speakerId=" + speakerId + ", firstName=" + firstName + ", lastName=" + lastName + ", title="
+				+ title + ", company=" + company + ", speakerBio=" + speakerBio + ", speakerPhoto="
+				+ Arrays.toString(speakerPhoto) + ", sessions=" + sessions + "]";
+	}
+
+	public void setTitle(String title) {
         this.title = title;
     }
 
