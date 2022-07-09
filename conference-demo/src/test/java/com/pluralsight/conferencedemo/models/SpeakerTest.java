@@ -69,4 +69,10 @@ public class SpeakerTest {
         List<Speaker> speakers = repository.findByFirstNameOrLastName("Justin","Clark");
         assertTrue(speakers.size() > 0);
     }
+    
+    @Test
+    public void testNull() throws Exception {
+        List<Speaker> speakers = repository.findBySpeakerPhotoNull();
+        assertTrue(speakers.size() > 0);
+    }
 }
