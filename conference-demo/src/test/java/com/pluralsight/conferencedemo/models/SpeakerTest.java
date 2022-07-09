@@ -99,4 +99,11 @@ public class SpeakerTest {
         assertTrue(speakers.size() > 0);
     }
     
+    @Test
+    public void testFindFirstByName() throws Exception {
+        Speaker speaker = repository.findFirstByFirstName("James");
+        assertTrue(speaker.getFirstName().equals("James"));
+        System.out.print(speaker.getFirstName());
+    }
+    
 }

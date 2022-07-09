@@ -14,4 +14,5 @@ public interface SpeakerJpaRepository extends JpaRepository<Speaker,Long>{
 	List<Speaker> findByCompanyIn(List<String> companies);
 	List<Speaker> findByCompanyIgnoreCase(String company);
 	List<Speaker> findByLastNameOrderByFirstNameAsc(String lastName);
+	Speaker findFirstByFirstName(String firstName);
 }
