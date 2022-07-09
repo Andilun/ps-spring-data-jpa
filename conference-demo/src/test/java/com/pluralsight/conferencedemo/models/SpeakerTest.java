@@ -103,7 +103,6 @@ public class SpeakerTest {
     public void testFindFirstByName() throws Exception {
         Speaker speaker = repository.findFirstByFirstName("James");
         assertTrue(speaker.getFirstName().equals("James"));
-        System.out.print(speaker.getFirstName());
     }
     
 }
