@@ -10,6 +10,10 @@ import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
@@ -46,5 +50,16 @@ public class SpeakerTest {
 
         repository.deleteById(otherSpeaker.getSpeakerId());
     }
-
+    
+    @Test
+    public void testJpaAnd() throws Exception {
+        List<Speaker> speakers = repository.findByFirstNameAndLastName("Justin","Clark");
+        assertTrue(speakers.size() > 0);
+    }
+    
+    @Test
+    public void testJpaOr() throws Exception {
+        List<Speaker> speakers = repository.findByFirstNameOrLastName("Justin","Clark");
+        assertTrue(speakers.size() > 0);
+    }
 }
