@@ -12,6 +12,7 @@ import javax.transaction.Transactional;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -75,4 +76,15 @@ public class SpeakerTest {
         List<Speaker> speakers = repository.findBySpeakerPhotoNull();
         assertTrue(speakers.size() > 0);
     }
+    
+    @Test
+    public void testJpaIn() throws Exception {
+    	List<String> companies = new ArrayList<>();
+    	companies.add("National Bank");
+    	companies.add("Contoso");
+    	companies.add("Statoil");
+        List<Speaker> speakers = repository.findByCompanyIn(companies);
+        assertTrue(speakers.size() > 0);
+    }
+    
 }
