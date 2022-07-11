@@ -49,6 +49,12 @@ public class TicketPriceTest {
         List<TicketPrice> tickets = repository.namedFindTicketsByPricingCategoryName("Regular");
         assertTrue(tickets.size() > 0);
     }
+    
+    @Test
+    public void testNativeNamedQueryAnnotation() throws Exception {
+        List<TicketPrice> tickets = repository.nativeFindTicketsByCategoryWithWorkshop("Regular");
+        assertTrue(tickets.size() > 0);
+    }
 
     @Test
     @Transactional
