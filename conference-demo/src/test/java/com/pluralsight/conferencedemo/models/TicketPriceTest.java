@@ -43,6 +43,12 @@ public class TicketPriceTest {
         List<TicketPrice> tickets = repository.getTicketsUnderPriceWithWorkshop(BigDecimal.valueOf(1000));
         assertTrue(tickets.size() > 0);
     }
+    
+    @Test
+    public void testNamedQueryAnnotation() throws Exception {
+        List<TicketPrice> tickets = repository.namedFindTicketsByPricingCategoryName("Regular");
+        assertTrue(tickets.size() > 0);
+    }
 
     @Test
     @Transactional
