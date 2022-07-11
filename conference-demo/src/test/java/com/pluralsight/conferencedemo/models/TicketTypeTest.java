@@ -21,5 +21,7 @@ public class TicketTypeTest {
 		List<TicketType> types = ticketTypeJpaRepository.findByIncludesWorkshopTrue();
 		assertTrue(types.size()>0);
 	}
+	
+	
 
 }
