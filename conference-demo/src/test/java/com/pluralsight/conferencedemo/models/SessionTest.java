@@ -69,6 +69,14 @@ public class SessionTest {
         //for(Session s : page.toList())System.out.println(s.getSessionName());
         assertTrue(page.getTotalElements() > 0);
     }
+    
+    @Test
+    public void testCustomImpl() throws Exception {
+    	List<Session> sessions = sessionJpaRepository.customGetSessions();
+        
+        //for(Session s : page.toList())System.out.println(s.getSessionName());
+        assertTrue(sessions.size() > 0);
+    }
 
 
 
