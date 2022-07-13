@@ -6,6 +6,9 @@ import com.pluralsight.conferencedemo.repositories.SessionRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 
@@ -57,6 +60,16 @@ public class SessionTest {
         assertTrue(sessions.size() > 0);
         //for(Session s : sessions)System.out.println(s.getSessionName());
     }
+    
+    @Test
+    public void testPagingSorting() throws Exception {
+        Page<Session> page = sessionJpaRepository.getSessionsWithName(
+        		"s", PageRequest.of(1, 5,Sort.by(Sort.Direction.DESC,"sessionLength")));
+        
+        //for(Session s : page.toList())System.out.println(s.getSessionName());
+        assertTrue(page.getTotalElements() > 0);
+    }
+
 
 
 }
